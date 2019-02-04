@@ -12,9 +12,16 @@ class App extends React.Component {
                     {lang: "Vue:"},
                     {lang: "Angular:"},
                     {lang: "Ember:"}
-                ]
+                ],
+                message: "",
             }
     }
+    // <Block message="React" onClickMessage={}
+    handleMessage(lang) {
+        const newMessage = `You just voted for ${lang}!`;
+        this.setState({message: newMessage});
+    }
+
 
     renderBlocks() {
         return this.state.blocks.map((block) => {
@@ -27,6 +34,7 @@ class App extends React.Component {
             <div className="container">
             <h1> VOTE FOR YOUR FAVORITE JavaScript LANGUAGE: </h1>
                 {this.renderBlocks()}
+            <h3> {this.state.message} </h3>
             </ div>
         )
     }

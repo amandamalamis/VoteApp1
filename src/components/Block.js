@@ -29,6 +29,7 @@ class Block extends React.Component{
             style={style} className="block">
             
             <h2 style={{color:lang}}>{lang} {this.state.count} {} </h2>
+            <button> {`Vote for ${this.props.lang} `} </button>
             </div>
         );
     }
